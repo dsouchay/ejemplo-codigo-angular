@@ -1,0 +1,27 @@
+<div class="wfg-modal">
+  <div class="wfg-modal__header">
+    <h3 class="wfg-modal__title">{{ 'wfg.' + config.title | translate }}</h3>
+    <button type="button" class="wfg-modal__close" (click)="doAction('close')"><mat-icon svgIcon="close"></mat-icon></button>
+  </div>
+  <div class="wfg-modal__body">
+    <p class="wfg-modal__text">{{ 'wfg.' + config.message | translate }}</p>
+    <div class="wfg-modal__buttons">
+      <button
+        *ngIf="config.cancel"
+        type="button"
+        class="wfg-btn wfg-btn--secondary wfg-btn--medium wfg-btn--long"
+        (click)="doAction(config.cancel.action)"
+      >
+        {{ 'wfg.' + config.cancel.text | translate }}
+      </button>
+      <button
+        *ngIf="config.ok"
+        type="button"
+        class="wfg-btn wfg-btn--primary wfg-btn--medium wfg-btn--long"
+        (click)="doAction(config.ok.action)"
+      >
+        {{ 'wfg.' + config.ok.text | translate }}
+      </button>
+    </div>
+  </div>
+</div>
